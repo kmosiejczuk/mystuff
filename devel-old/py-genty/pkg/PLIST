@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v$
+lib/python${MODPY_VERSION}/site-packages/genty/
+lib/python${MODPY_VERSION}/site-packages/genty-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/genty-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/genty-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/genty-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/genty-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/genty-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/genty-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/genty/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/genty/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/genty/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/genty/${MODPY_PYCACHE}genty.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/genty/${MODPY_PYCACHE}genty_args.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/genty/${MODPY_PYCACHE}genty_dataset.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/genty/${MODPY_PYCACHE}genty_repeat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/genty/genty.py
+lib/python${MODPY_VERSION}/site-packages/genty/genty_args.py
+lib/python${MODPY_VERSION}/site-packages/genty/genty_dataset.py
+lib/python${MODPY_VERSION}/site-packages/genty/genty_repeat.py
+lib/python${MODPY_VERSION}/site-packages/genty/private/
+lib/python${MODPY_VERSION}/site-packages/genty/private/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/genty/private/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/genty/private/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

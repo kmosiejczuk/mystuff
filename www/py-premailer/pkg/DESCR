@@ -1,0 +1,7 @@
+premailer parses an HTML page, looks up style blocks and parses the
+CSS. It then uses the lxml.html parser to modify the DOM tree of
+the page accordingly.
+
+It can also turn relative URLs into absolute files, ignore processing
+certain style or link tags and create additional HTML attributes
+from basic attributes contained within the CSS.

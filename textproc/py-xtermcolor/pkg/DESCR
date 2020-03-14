@@ -1,0 +1,3 @@
+XTermColor is a convenient python module for quickly colorizing
+text for output to the terminal either via ANSI color code or RGB
+color value.

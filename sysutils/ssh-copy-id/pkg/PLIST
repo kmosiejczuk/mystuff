@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v$
+bin/ssh-copy-id
+@man man/man1/ssh-copy-id.1

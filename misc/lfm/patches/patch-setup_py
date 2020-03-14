@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2011/07/17 20:23:46 sthen Exp $
+
+Fix manpage path
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -71,7 +71,7 @@ try:
+           license='GPL3+',
+           packages=['lfm'],
+           scripts=['lfm/lfm'],
+-          data_files=[(join(prefix, 'share/man/man1'), MAN_FILES)],
++          data_files=[(join(prefix, 'man/man1'), MAN_FILES)],
+           package_data={'': CONFIG_FILES + [join('doc', f) for f in DOC_FILES]},
+     )
+ finally:

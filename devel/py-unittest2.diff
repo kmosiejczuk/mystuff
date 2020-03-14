@@ -1,0 +1,106 @@
+Index: Makefile
+===================================================================
+RCS file: /cvs/ports/devel/py-unittest2/Makefile,v
+retrieving revision 1.7
+diff -u -p -r1.7 Makefile
+--- Makefile	18 Nov 2019 03:23:00 -0000	1.7
++++ Makefile	1 Jan 2020 05:51:51 -0000
+@@ -2,11 +2,12 @@
+ 
+ COMMENT =		backport of new features added to unittest
+ 
+-MODPY_EGG_VERSION =	0.5.1
++MODPY_EGG_VERSION =	1.1.0
+ DISTNAME =		unittest2-${MODPY_EGG_VERSION}
+ PKGNAME =		py-${DISTNAME}
+ CATEGORIES =		devel
+-REVISION =		1
++
++HOMEPAGE =		https://hg.python.org/unittest2
+ 
+ MAINTAINER =		frantisek holop <minusf@obiit.org>
+ 
+@@ -17,14 +18,14 @@ MODPY_PI =		Yes
+ 
+ MODULES =		lang/python
+ MODPY_SETUPTOOLS =	Yes
++MODPY_PYTEST =		Yes
++MODPY_PYTEST_ARGS =	unittest2
+ 
+-TEST_DEPENDS =		devel/py-unittest2
++RUN_DEPENDS =		devel/py-six \
++			devel/py-traceback2
+ 
+ post-install:
+ 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/unittest2
+ 	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/doc/unittest2
+-
+-do-test:
+-	cd ${WRKSRC}/unittest2/test && unit2 discover
+ 
+ .include <bsd.port.mk>
+Index: distinfo
+===================================================================
+RCS file: /cvs/ports/devel/py-unittest2/distinfo,v
+retrieving revision 1.1.1.1
+diff -u -p -r1.1.1.1 distinfo
+--- distinfo	12 Mar 2013 10:39:42 -0000	1.1.1.1
++++ distinfo	1 Jan 2020 05:51:51 -0000
+@@ -1,2 +1,2 @@
+-SHA256 (unittest2-0.5.1.tar.gz) = ql3ozfZU2EM3nJe9HuJA6GNW0zVal7FHpvP00UkkenE=
+-SIZE (unittest2-0.5.1.tar.gz) = 62470
++SHA256 (unittest2-1.1.0.tar.gz) = IogqDkGMKE4fcYqCKzsCKUTVPS2QjhaQsxmp0+ssBXk=
++SIZE (unittest2-1.1.0.tar.gz) = 81432
+Index: patches/patch-setup_py
+===================================================================
+RCS file: patches/patch-setup_py
+diff -N patches/patch-setup_py
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ patches/patch-setup_py	1 Jan 2020 05:51:51 -0000
+@@ -0,0 +1,14 @@
++$OpenBSD$
++argparse built-in for python 2.7 and up
++Index: setup.py
++--- setup.py.orig
+++++ setup.py
++@@ -57,7 +57,7 @@ KEYWORDS = "unittest testing tests".split(' ')
++ # Both install and setup requires - because we read VERSION from within the
++ # package, and the package also exports all the APIs.
++ # six for compat helpers
++-REQUIRES = ['argparse', 'six>=1.4', 'traceback2'],
+++REQUIRES = ['six>=1.4', 'traceback2'],
++ 
++ params = dict(
++     name=NAME,
+Index: pkg/PLIST
+===================================================================
+RCS file: /cvs/ports/devel/py-unittest2/pkg/PLIST,v
+retrieving revision 1.1.1.1
+diff -u -p -r1.1.1.1 PLIST
+--- pkg/PLIST	12 Mar 2013 10:39:42 -0000	1.1.1.1
++++ pkg/PLIST	1 Jan 2020 05:51:51 -0000
+@@ -1,13 +1,12 @@
+-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/12 10:39:42 benoit Exp $
++@comment $OpenBSD: PLIST,v$
+ bin/unit2
+-bin/unit2-${MODPY_VERSION}
+-bin/unit2.py
+ lib/python${MODPY_VERSION}/site-packages/unittest2/
+ lib/python${MODPY_VERSION}/site-packages/unittest2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+ lib/python${MODPY_VERSION}/site-packages/unittest2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+ lib/python${MODPY_VERSION}/site-packages/unittest2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+ lib/python${MODPY_VERSION}/site-packages/unittest2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+ lib/python${MODPY_VERSION}/site-packages/unittest2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
++lib/python${MODPY_VERSION}/site-packages/unittest2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+ lib/python${MODPY_VERSION}/site-packages/unittest2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+ lib/python${MODPY_VERSION}/site-packages/unittest2/__init__.py
+ lib/python${MODPY_VERSION}/site-packages/unittest2/__init__.pyc
+@@ -34,6 +33,8 @@ lib/python${MODPY_VERSION}/site-packages
+ lib/python${MODPY_VERSION}/site-packages/unittest2/test/
+ lib/python${MODPY_VERSION}/site-packages/unittest2/test/__init__.py
+ lib/python${MODPY_VERSION}/site-packages/unittest2/test/__init__.pyc
++lib/python${MODPY_VERSION}/site-packages/unittest2/test/_test_unittest2_with.py
++lib/python${MODPY_VERSION}/site-packages/unittest2/test/_test_unittest2_with.pyc
+ lib/python${MODPY_VERSION}/site-packages/unittest2/test/dummy.py
+ lib/python${MODPY_VERSION}/site-packages/unittest2/test/dummy.pyc
+ lib/python${MODPY_VERSION}/site-packages/unittest2/test/support.py

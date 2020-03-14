@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v$
+lib/python${MODPY_VERSION}/site-packages/audioread/
+lib/python${MODPY_VERSION}/site-packages/audioread-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/audioread-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/.pbr.json.icloud
+lib/python${MODPY_VERSION}/site-packages/audioread-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/audioread-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/audioread-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/audioread-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/audioread/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/audioread/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/audioread/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/audioread/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/audioread/${MODPY_PYCACHE}ffdec.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/audioread/${MODPY_PYCACHE}gstdec.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/audioread/${MODPY_PYCACHE}macca.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/audioread/${MODPY_PYCACHE}maddec.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/audioread/${MODPY_PYCACHE}rawread.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/audioread/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/audioread/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/audioread/ffdec.py
+lib/python${MODPY_VERSION}/site-packages/audioread/gstdec.py
+lib/python${MODPY_VERSION}/site-packages/audioread/macca.py
+lib/python${MODPY_VERSION}/site-packages/audioread/maddec.py
+lib/python${MODPY_VERSION}/site-packages/audioread/rawread.py
+lib/python${MODPY_VERSION}/site-packages/audioread/version.py

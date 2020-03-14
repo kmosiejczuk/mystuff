@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Only test that fails is Windows-only
+
+Index: tests/test_serving.py
+--- tests/test_serving.py.orig
++++ tests/test_serving.py
+@@ -295,6 +295,8 @@ def test_reloader_reports_correct_file(tmpdir, dev_ser
+         raise RuntimeError("Change event not detected.")
+ 
+ 
++@pytest.mark.skipif( sys.platform != "win32", reason="Not Windows", )
++
+ def test_windows_get_args_for_reloading(monkeypatch, tmpdir):
+     test_py_exe = r"C:\Users\test\AppData\Local\Programs\Python\Python36\python.exe"
+     monkeypatch.setattr(os, "name", "nt")

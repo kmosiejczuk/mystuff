@@ -1,0 +1,3 @@
+A pytest plugin to enable format checking with black. The plugin
+will output a diff of suggested formatting changes (if any exist).
+Changes will not be applied automatically.

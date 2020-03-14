@@ -1,0 +1,11 @@
+WSGIProxy2 gives tools to proxy arbitrary(ish) WSGI requests to
+other processes over HTTP. It is a fork of the inactive WSGIProxy.
+
+It will encode the WSGI request CGI-style environmental variables
+(which must be strings), plus a configurable set of other variables.
+It also sends values like HTTP_HOST and wsgi.url_scheme which are
+often obscured by the proxying process, as well as values like
+SCRIPT_NAME. On the receiving end, WSGI middleware fixes up the
+environment to represent the state of the original request. This
+makes HTTP more like FastCGI or SCGI, which naturally preserve these
+values.

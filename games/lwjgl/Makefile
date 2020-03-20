@@ -23,19 +23,27 @@ HOMEPAGE=	https://lwjgl.org
 
 MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
-#COMPILERS=	ports-gcc
+COMPILERS=	base-clang ports-gcc
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
 # GL listed here as it is dlopen()d by the lib
-WANTLIB += GL X11 Xcursor Xext Xrandr Xxf86vm m pthread
+WANTLIB +=	${COMPILER_LIBCXX} GL X11 Xcursor Xext Xrandr Xxf86vm m pthread
 
 MODULES=	java
 MODJAVA_VER=	1.8
 MODJAVA_BUILD=	ant
 
-BUILD_DEPENDS=	audio/openal
+LIB_DEPENDS=	archivers/lz4 \
+		archivers/zstd \
+		audio/openal \
+		audio/opus \
+		databases/lmdb \
+		devel/bullet \
+		graphics/glfw \
+		multimedia/assimp \
+		sysutils/xxhash
 
 NO_TEST=	Yes
 

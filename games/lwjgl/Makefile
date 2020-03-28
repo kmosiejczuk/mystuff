@@ -51,9 +51,11 @@ SUBST_VARS+=	M_ARCH
 
 pre-configure:
 	perl -pi -e 's,/usr/X11R6,${X11BASE},g' \
-		${WRKSRC}/platform_build/bsd_ant/build.xml
+		${WRKSRC}/config/openbsd/build.xml
 	perl -pi -e 's,/usr/local,${LOCALBASE},g' \
-		${WRKSRC}/platform_build/bsd_ant/build.xml
+		${WRKSRC}/config/openbsd/build.xml
+	mkdir -p ${WRKSRC}/bin/libs
+	ln -s /home/kurt/kotlinc ${WRKSRC}/bin/libs/
 
 do-install:
 	${INSTALL_DATA_DIR} ${LWJGL_HOME}

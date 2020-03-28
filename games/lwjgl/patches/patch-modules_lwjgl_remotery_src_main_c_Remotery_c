@@ -1,0 +1,22 @@
+$OpenBSD$
+
+Index: modules/lwjgl/remotery/src/main/c/Remotery.c
+--- modules/lwjgl/remotery/src/main/c/Remotery.c.orig
++++ modules/lwjgl/remotery/src/main/c/Remotery.c
+@@ -92,7 +92,7 @@ static rmtBool g_SettingsInitialized = RMT_FALSE;
+         #include <mach/mach.h>
+         #include <sys/time.h>
+     #else
+-        #ifndef __FreeBSD__
++        #ifndef __OpenBSD__
+             #include <malloc.h>
+         #endif
+     #endif
+@@ -122,6 +122,7 @@ static rmtBool g_SettingsInitialized = RMT_FALSE;
+ 
+     #if defined(RMT_PLATFORM_POSIX)
+         #include <stdlib.h>
++	#include <time.h>
+         #include <pthread.h>
+         #include <unistd.h>
+         #include <string.h>

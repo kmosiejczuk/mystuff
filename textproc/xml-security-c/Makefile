@@ -14,11 +14,9 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://downloads.apache.org/santuario/c-library/
 
-WANTLIB += ${COMPILER_LIBCXX} icudata icui18n icuuc m
+WANTLIB += ${COMPILER_LIBCXX}
 
-#COMPILER =		base-clang ports-gcc base-gcc
-
-LIB_DEPENDS =		textproc/icu4c
+COMPILER =		base-clang ports-gcc
 
 CONFIGURE_STYLE =	gnu
 USE_GMAKE =		Yes

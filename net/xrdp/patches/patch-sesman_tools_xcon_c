@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Need to include select.h
+
+Index: sesman/tools/xcon.c
+--- sesman/tools/xcon.c.orig
++++ sesman/tools/xcon.c
+@@ -26,6 +26,7 @@
+ #include <unistd.h>
+ #include <sys/types.h>
+ #include <X11/Xlib.h>
++#include <sys/select.h>
+ 
+ Display *g_display = 0;
+ int g_x_socket = 0;

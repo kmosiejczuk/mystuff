@@ -1,0 +1,89 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/xrdp-dis
+@bin bin/xrdp-genkeymap
+@bin bin/xrdp-keygen
+@bin bin/xrdp-sesadmin
+@bin bin/xrdp-sesrun
+include/ms-erref.h
+include/ms-fscc.h
+include/ms-rdpbcgr.h
+include/ms-rdpefs.h
+include/ms-rdpegdi.h
+include/ms-rdpele.h
+include/ms-rdperp.h
+include/ms-smb2.h
+include/xrdp_client_info.h
+include/xrdp_constants.h
+include/xrdp_rail.h
+include/xrdp_sockets.h
+lib/pkgconfig/xrdp.pc
+lib/xrdp/
+@static-lib lib/xrdp/libcommon.a
+lib/xrdp/libcommon.la
+@lib lib/xrdp/libcommon.so.${LIBcommon_VERSION}
+@static-lib lib/xrdp/libmc.a
+lib/xrdp/libmc.la
+@so lib/xrdp/libmc.so
+@static-lib lib/xrdp/libscp.a
+lib/xrdp/libscp.la
+@lib lib/xrdp/libscp.so.${LIBscp_VERSION}
+@static-lib lib/xrdp/libvnc.a
+lib/xrdp/libvnc.la
+@so lib/xrdp/libvnc.so
+@static-lib lib/xrdp/libxrdp.a
+lib/xrdp/libxrdp.la
+@lib lib/xrdp/libxrdp.so.${LIBxrdp_VERSION}
+@static-lib lib/xrdp/libxrdpapi.a
+lib/xrdp/libxrdpapi.la
+@lib lib/xrdp/libxrdpapi.so.${LIBxrdpapi_VERSION}
+@static-lib lib/xrdp/libxup.a
+lib/xrdp/libxup.la
+@so lib/xrdp/libxup.so
+@man man/man1/xrdp-dis.1
+@man man/man5/sesman.ini.5
+@man man/man5/xrdp.ini.5
+@man man/man8/xrdp-chansrv.8
+@man man/man8/xrdp-genkeymap.8
+@man man/man8/xrdp-keygen.8
+@man man/man8/xrdp-sesadmin.8
+@man man/man8/xrdp-sesman.8
+@man man/man8/xrdp-sesrun.8
+@man man/man8/xrdp.8
+@bin sbin/xrdp
+@bin sbin/xrdp-chansrv
+@bin sbin/xrdp-sesman
+share/xrdp/
+share/xrdp/ad24b.bmp
+share/xrdp/ad256.bmp
+share/xrdp/cursor0.cur
+share/xrdp/cursor1.cur
+share/xrdp/sans-10.fv1
+share/xrdp/xrdp24b.bmp
+share/xrdp/xrdp256.bmp
+share/xrdp/xrdp_logo.bmp
+@sample etc/xrdp/xrdp.ini
+@sample etc/xrdp/xrdp_keyboard.ini
+@sample etc/xrdp/sesman.ini
+@sample etc/xrdp/km-00000406.ini
+@sample etc/xrdp/km-00000407.ini
+@sample etc/xrdp/km-00000409.ini
+@sample etc/xrdp/km-0000040a.ini
+@sample etc/xrdp/km-0000040b.ini
+@sample etc/xrdp/km-0000040c.ini
+@sample etc/xrdp/km-00000410.ini
+@sample etc/xrdp/km-00000411.ini
+@sample etc/xrdp/km-00000412.ini
+@sample etc/xrdp/km-00000414.ini
+@sample etc/xrdp/km-00000415.ini
+@sample etc/xrdp/km-00000416.ini
+@sample etc/xrdp/km-00000419.ini
+@sample etc/xrdp/km-0000041d.ini
+@sample etc/xrdp/km-00000807.ini
+@sample etc/xrdp/km-00000809.ini
+@sample etc/xrdp/km-0000080a.ini
+@sample etc/xrdp/km-0000080c.ini
+@sample etc/xrdp/km-00000813.ini
+@sample etc/xrdp/km-00000816.ini
+@sample etc/xrdp/km-0000100c.ini
+@sample etc/xrdp/km-00010409.ini
+@sample etc/xrdp/km-19360409.ini

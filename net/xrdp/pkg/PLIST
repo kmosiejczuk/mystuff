@@ -1,4 +1,5 @@
 @comment $OpenBSD: PLIST,v$
+@sample ${SYSCONFDIR}/xrdp/
 @bin bin/xrdp-dis
 @bin bin/xrdp-genkeymap
 @bin bin/xrdp-keygen
@@ -52,6 +53,61 @@ lib/xrdp/libxup.la
 @bin sbin/xrdp
 @bin sbin/xrdp-chansrv
 @bin sbin/xrdp-sesman
+share/examples/xrdp/
+share/examples/xrdp/km-00000406.ini
+@sample ${SYSCONFDIR}/xrdp/km-00000406.ini
+share/examples/xrdp/km-00000407.ini
+@sample ${SYSCONFDIR}/xrdp/km-00000407.ini
+share/examples/xrdp/km-00000409.ini
+@sample ${SYSCONFDIR}/xrdp/km-00000409.ini
+share/examples/xrdp/km-0000040a.ini
+@sample ${SYSCONFDIR}/xrdp/km-0000040a.ini
+share/examples/xrdp/km-0000040b.ini
+@sample ${SYSCONFDIR}/xrdp/km-0000040b.ini
+share/examples/xrdp/km-0000040c.ini
+@sample ${SYSCONFDIR}/xrdp/km-0000040c.ini
+share/examples/xrdp/km-00000410.ini
+@sample ${SYSCONFDIR}/xrdp/km-00000410.ini
+share/examples/xrdp/km-00000411.ini
+@sample ${SYSCONFDIR}/xrdp/km-00000411.ini
+share/examples/xrdp/km-00000412.ini
+@sample ${SYSCONFDIR}/xrdp/km-00000412.ini
+share/examples/xrdp/km-00000414.ini
+@sample ${SYSCONFDIR}/xrdp/km-00000414.ini
+share/examples/xrdp/km-00000415.ini
+@sample ${SYSCONFDIR}/xrdp/km-00000415.ini
+share/examples/xrdp/km-00000416.ini
+@sample ${SYSCONFDIR}/xrdp/km-00000416.ini
+share/examples/xrdp/km-00000419.ini
+@sample ${SYSCONFDIR}/xrdp/km-00000419.ini
+share/examples/xrdp/km-0000041d.ini
+@sample ${SYSCONFDIR}/xrdp/km-0000041d.ini
+share/examples/xrdp/km-00000807.ini
+@sample ${SYSCONFDIR}/xrdp/km-00000807.ini
+share/examples/xrdp/km-00000809.ini
+@sample ${SYSCONFDIR}/xrdp/km-00000809.ini
+share/examples/xrdp/km-0000080a.ini
+@sample ${SYSCONFDIR}/xrdp/km-0000080a.ini
+share/examples/xrdp/km-0000080c.ini
+@sample ${SYSCONFDIR}/xrdp/km-0000080c.ini
+share/examples/xrdp/km-00000813.ini
+@sample ${SYSCONFDIR}/xrdp/km-00000813.ini
+share/examples/xrdp/km-00000816.ini
+@sample ${SYSCONFDIR}/xrdp/km-00000816.ini
+share/examples/xrdp/km-0000100c.ini
+@sample ${SYSCONFDIR}/xrdp/km-0000100c.ini
+share/examples/xrdp/km-00010409.ini
+@sample ${SYSCONFDIR}/xrdp/km-00010409.ini
+share/examples/xrdp/km-19360409.ini
+@sample ${SYSCONFDIR}/xrdp/km-19360409.ini
+share/examples/xrdp/reconnectwm.sh
+share/examples/xrdp/sesman.ini
+@sample ${SYSCONFDIR}/xrdp/sesman.ini
+share/examples/xrdp/startwm.sh
+share/examples/xrdp/xrdp.ini
+@sample ${SYSCONFDIR}/xrdp/xrdp.ini
+share/examples/xrdp/xrdp_keyboard.ini
+@sample ${SYSCONFDIR}/xrdp/xrdp_keyboard.ini
 share/xrdp/
 share/xrdp/ad24b.bmp
 share/xrdp/ad256.bmp
@@ -61,29 +117,3 @@ share/xrdp/sans-10.fv1
 share/xrdp/xrdp24b.bmp
 share/xrdp/xrdp256.bmp
 share/xrdp/xrdp_logo.bmp
-@sample etc/xrdp/xrdp.ini
-@sample etc/xrdp/xrdp_keyboard.ini
-@sample etc/xrdp/sesman.ini
-@sample etc/xrdp/km-00000406.ini
-@sample etc/xrdp/km-00000407.ini
-@sample etc/xrdp/km-00000409.ini
-@sample etc/xrdp/km-0000040a.ini
-@sample etc/xrdp/km-0000040b.ini
-@sample etc/xrdp/km-0000040c.ini
-@sample etc/xrdp/km-00000410.ini
-@sample etc/xrdp/km-00000411.ini
-@sample etc/xrdp/km-00000412.ini
-@sample etc/xrdp/km-00000414.ini
-@sample etc/xrdp/km-00000415.ini
-@sample etc/xrdp/km-00000416.ini
-@sample etc/xrdp/km-00000419.ini
-@sample etc/xrdp/km-0000041d.ini
-@sample etc/xrdp/km-00000807.ini
-@sample etc/xrdp/km-00000809.ini
-@sample etc/xrdp/km-0000080a.ini
-@sample etc/xrdp/km-0000080c.ini
-@sample etc/xrdp/km-00000813.ini
-@sample etc/xrdp/km-00000816.ini
-@sample etc/xrdp/km-0000100c.ini
-@sample etc/xrdp/km-00010409.ini
-@sample etc/xrdp/km-19360409.ini

@@ -1,5 +1,5 @@
 # $OpenBSD$
-#
+
 COMMENT =		allow RDP connections to your non-windows server
 
 V =			0.9.14
@@ -21,12 +21,7 @@ PERMIT_PACKAGE =	Yes
 # "make port-lib-depends-check" can help
 #WANTLIB =		???
 
-# where the source files and patches can be fetched
-#
-MASTER_SITES =		https://github.com/neutrinolabs/xrdp/releases/download/v${V}/
-# https://github.com/neutrinolabs/xrdp/archive/v0.9.14.tar.gz
-
-#WRKSRC =		${WRKDIR}/${PKGNAME}
+MASTER_SITES =	https://github.com/neutrinolabs/xrdp/releases/download/v${V}/
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.16
@@ -39,5 +34,10 @@ AUTOMAKE_VERSION =	1.16
 
 CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS +=	--enable-bsd --disable-painter --disable-rfxcodec
+
+post-install:
+	rm ${DESTDIR}/etc/xrdp/*.pem ${DESTDIR}/etc/xrdp/rsakeys.ini
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xrdp
+	mv ${DESTDIR}/etc/xrdp/* ${PREFIX}/share/examples/xrdp
 
 .include <bsd.port.mk>

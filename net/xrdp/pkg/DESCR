@@ -1,0 +1,4 @@
+xrdp provides a graphical login to remote machines using RDP
+(Microsoft Remote Desktop Protocol). xrdp accepts connections from
+variety of RDP clients: FreeRDP, rdesktop, NeutrinoRDP and Microsoft
+Remote Desktop Client (for Windows, macOS, iOS and Android).

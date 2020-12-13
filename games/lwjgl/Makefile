@@ -5,9 +5,9 @@ COMMENT=	lightweight game library for java
 V=		3.2.3
 GH_ACCOUNT=	kmosiejczuk
 GH_PROJECT=	lwjgl3
-GH_TAGNAME=	${V}-openbsd
+GH_TAGNAME=	openbsd-working
 DISTNAME=	lwjgl3-${V}
-PKGNAME=	lwjgl-${V}
+PKGNAME=	lwjgl3-${V}
 
 .if ${MACHINE_ARCH} == "i386"
 M_ARCH=		""
@@ -15,13 +15,11 @@ M_ARCH=		""
 M_ARCH=		64
 .endif
 
-LWJGL_HOME=	${PREFIX}/share/lwjgl
+LWJGL3_HOME=	${PREFIX}/share/lwjgl3
 
 CATEGORIES=	games devel
 
 HOMEPAGE=	https://lwjgl.org
-
-MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
 COMPILERS=	base-clang ports-gcc
 
@@ -30,13 +28,15 @@ PERMIT_PACKAGE=	Yes
 
 # GL listed here as it is dlopen()d by the lib
 WANTLIB +=	${COMPILER_LIBCXX} GL X11 Xcursor Xext Xrandr Xxf86vm m pthread
+WANTLIB +=	gtk-3
 
 MODULES=	java
-MODJAVA_VER=	1.8
+MODJAVA_VER=	11
 MODJAVA_BUILD=	ant
 MODJAVA_BUILD_TARGET_NAME=	compile-templates \
 				compile \
-				compile-native
+				compile-native \
+				release
 
 LIB_DEPENDS=	archivers/lz4 \
 		archivers/zstd \
@@ -44,9 +44,11 @@ LIB_DEPENDS=	archivers/lz4 \
 		audio/opus \
 		databases/lmdb \
 		devel/bullet \
+		devel/dyncall \
 		graphics/glfw \
 		multimedia/assimp \
-		sysutils/xxhash
+		sysutils/xxhash \
+		x11/gtk+3
 
 NO_TEST=	Yes
 
@@ -71,10 +73,13 @@ pre-configure:
 	ln -s /home/kurt/kotlinc ${WRKSRC}/bin/libs/
 
 do-install:
-	${INSTALL_DATA_DIR} ${LWJGL_HOME}
-	for x in ${WRKSRC}/libs/*.jar; do \
-		${INSTALL_DATA} $$x ${LWJGL_HOME}/; \
+	${INSTALL_DATA_DIR} ${LWJGL3_HOME}
+	for x in ${WRKSRC}/bin/libs/java/*.jar; do \
+		${INSTALL_DATA} $$x ${LWJGL3_HOME}/; \
 	done
-	${INSTALL_DATA} ${WRKSRC}/libs/openbsd/liblwjgl${M_ARCH}.so ${LWJGL_HOME}/
+	for x in ${WRKSRC}/bin/libs/native/openbsd/x64/org/lwjgl/*/*.so; do \
+		${INSTALL_DATA} $$x ${LWJGL3_HOME}/; \
+	done
+	${INSTALL_DATA} ${WRKSRC}/bin/libs/native/openbsd/x64/org/lwjgl/liblwjgl.so ${LWJGL3_HOME}/
 
 .include <bsd.port.mk>

@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-include/painter.h
-@static-lib lib/libpainter.a
-lib/libpainter.la
-@lib lib/libpainter.so.${LIBpainter_VERSION}
-lib/pkgconfig/libpainter.pc

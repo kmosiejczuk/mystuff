@@ -1,11 +1,24 @@
 @comment $OpenBSD: PLIST,v 1.2 2016/03/02 14:42:08 abieber Exp $
 share/lwjgl/
-share/lwjgl/AppleJavaExtensions.jar
-share/lwjgl/asm-debug-all.jar
-share/lwjgl/jinput.jar
-share/lwjgl/liblwjgl${M_ARCH}.so
-share/lwjgl/lwjgl.jar
-share/lwjgl/lwjgl_test.jar
-share/lwjgl/lwjgl_util.jar
-share/lwjgl/lwjgl_util_applet.jar
-share/lwjgl/lzma.jar
+share/lwjgl/commons-math3.jar
+share/lwjgl/jcommander.jar
+share/lwjgl/jmh-core-sources.jar
+share/lwjgl/jmh-core.jar
+share/lwjgl/jmh-generator-annprocess.jar
+share/lwjgl/joml-sources.jar
+share/lwjgl/joml.jar
+share/lwjgl/jopt-simple.jar
+share/lwjgl/jsr305-sources.jar
+share/lwjgl/jsr305.jar
+@so share/lwjgl/liblwjgl.so
+@so share/lwjgl/liblwjgl_libdivide.so
+@so share/lwjgl/liblwjgl_llvm.so
+@so share/lwjgl/liblwjgl_lmdb.so
+@so share/lwjgl/liblwjgl_lz4.so
+@so share/lwjgl/liblwjgl_nfd.so
+@so share/lwjgl/liblwjgl_opengl.so
+@so share/lwjgl/liblwjgl_opengles.so
+@so share/lwjgl/liblwjgl_remotery.so
+@so share/lwjgl/liblwjgl_tinyfd.so
+share/lwjgl/testng-sources.jar
+share/lwjgl/testng.jar

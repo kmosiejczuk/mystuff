@@ -1,3 +1,0 @@
-base58 and base58check implementations compatible with the
-implementation used by the bitcoin network. Alternative alphabets
-(such as Ripple) can be used.

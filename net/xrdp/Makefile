@@ -18,19 +18,17 @@ MAINTAINER =		Kurt Mosiejczuk <kmos@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-# "make port-lib-depends-check" can help
-#WANTLIB =		???
+WANTLIB +=		ICE SM X11 Xext Xfixes Xrandr Xrender c crypto
+WANTLIB +=		pthread ssl xcb
+
 
 MASTER_SITES =	https://github.com/neutrinolabs/xrdp/releases/download/v${V}/
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.16
 
-# Dependencies
-#BUILD_DEPENDS =	???
-#RUN_DEPENDS =		???
-#LIB_DEPENDS =		???
-#TEST_DEPENDS =		???
+LIB_DEPENDS =		graphics/libpainter \
+			graphics/rfxcodec
 
 CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS +=	--enable-bsd --disable-painter --disable-rfxcodec

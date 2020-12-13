@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-include/rfxcodec_common.h
-include/rfxcodec_decode.h
-include/rfxcodec_encode.h
-@static-lib lib/librfxencode.a
-lib/librfxencode.la
-@lib lib/librfxencode.so.${LIBrfxencode_VERSION}
-lib/pkgconfig/rfxcodec.pc

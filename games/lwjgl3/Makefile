@@ -19,17 +19,19 @@ CATEGORIES =	games devel
 
 HOMEPAGE =	https://lwjgl.org
 
-MAINTAINER =	TBD
+MAINTAINER =	Kurt Mosiejczuk <kmos@openbsd.org>
 
 COMPILER =	base-clang ports-gcc
 
 EXTRACT_ONLY =	${DISTNAME}.tar.gz
 
+# Build downloads kotlin compiler and libraries from maven if not available
+
 DISTFILES +=	${DISTNAME}.tar.gz \
-		kotlin-compiler-1.3.61.zip:1 \
-		lwjgl3-maven.tar.gz:2
+		kotlin-compiler-${KOTLIN_V}.zip:1 \
+		lwjgl3-maven-20210208.tar.gz:2
 MASTER_SITES =	\
-	https://github.com/kmosiejczuk/lwjgl3/releases/download/3.2.4alpha1/
+	https://github.com/kmosiejczuk/lwjgl3/releases/download/${V}/
 MASTER_SITES1 =	\
 	https://github.com/JetBrains/kotlin/releases/download/v${KOTLIN_V}/
 MASTER_SITES2 =	https://filedump.se.rit.edu/pub/distfiles/
@@ -63,18 +65,19 @@ NO_TEST =	Yes
 
 SUBST_VARS +=	M_ARCH
 
-#MAKE_ENV +=	JAVA8_HOME=${LOCALBASE}/jdk-11
+post-extract:
+	mkdir -p ${WRKSRC}/bin/libs
+	unzip -oq -d ${WRKSRC}/bin/libs/ \
+		${FULLDISTDIR}/kotlin-compiler-${KOTLIN_V}.zip
+	tar -C ${WRKSRC}/bin/libs -zxf \
+		${FULLDISTDIR}/lwjgl3-maven-20210208.tar.gz
 
 pre-configure:
 	perl -pi -e 's,/usr/X11R6,${X11BASE},g' \
 		${WRKSRC}/build.xml
 	perl -pi -e 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/build.xml
-	mkdir -p ${WRKSRC}/bin/libs
 	touch ${WRKSRC}/bin/libs/touch.txt
-	unzip -oq -d ${WRKSRC}/bin/libs/ \
-		${FULLDISTDIR}/kotlin-compiler-${KOTLIN_V}.zip
-	tar -C ${WRKSRC}/bin/libs -zxf ${FULLDISTDIR}/lwjgl3-maven.tar.gz
 
 do-build:
 	${MODJAVA_BUILD_TARGET}
